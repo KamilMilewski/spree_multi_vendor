@@ -8,6 +8,7 @@ en:
       spree/vendor:
         name: name
         state: state
+        show_website: vendor website
         created_at: created at
   spree:
     back_to_vendors_list: Back To Vendors List

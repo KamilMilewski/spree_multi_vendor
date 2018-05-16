@@ -10,4 +10,10 @@
       options_for_select(Spree::Vendor.state_machines[:state].states.collect { |s| [Spree.t("vendor_states.#{s.name}"), s.value] }, selected: @vendor.state),
       {}, class: 'select2' %>
   <% end %>
+  <%# e-commerce-yossi begin %>
+  <%= f.field_container :name do %>
+    <%= f.label :show_website %>
+    <%= f.text_field :show_website, class: 'form-control' %>
+  <% end %>
+  <%# e-commerce-yossi end %>
 </div>

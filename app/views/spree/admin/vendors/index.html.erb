@@ -40,6 +40,11 @@
         <th>
           <%= sort_link @search, :state, I18n.t(:state, scope: 'activerecord.attributes.spree/vendor') %>
         </th>
+        <%# e-commerce-yossi begin %>
+        <th>
+          <%= sort_link @search, :show_website, I18n.t(:show_website, scope: 'activerecord.attributes.spree/vendor') %>
+        </th>
+        <%# e-commerce-yossi end %>
         <th>
           <%= sort_link @search, :created_at, I18n.t(:created_at, scope: 'activerecord.attributes.spree/vendor') %>
         </th>
@@ -57,6 +62,11 @@
             <span class="label label-<%= vendor.state.downcase %>"><%= vendor.state.humanize.downcase %></span>
             <span class="icon icon-filter filterable js-add-filter" data-ransack-field="q_state_eq" data-ransack-value="<%= vendor.state %>"></span>
           </td>
+          <%# e-commerce-yossi begin %>
+          <td>
+            <%= link_to vendor.show_website, vendor.show_website, target: "_blank" %>
+          </td>
+          <%# e-commerce-yossi end %>
           <td>
             <%= pretty_time(vendor.created_at) %>
           </td>

@@ -30,6 +30,14 @@ module Spree
 
     self.whitelisted_ransackable_attributes = %w[name state]
 
+    # e-commerce-yossi begin
+
+    URL_REGEXP = /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix
+    validates :show_website, :allow_blank => true,
+      format: { with: URL_REGEXP, message: 'URL has invalid format' }
+
+    # e-commerce-yossi end
+
     private
 
     def create_stock_location

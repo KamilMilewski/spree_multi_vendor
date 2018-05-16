@@ -32,4 +32,13 @@ describe Spree::Vendor do
       expect(stock_location.country).to eq Spree::Country.default
     end
   end
+
+  # e-commerce-yossi begin
+
+  describe 'validations' do
+    it { is_expected.to allow_value("https://www.google.com").for(:show_website) }
+    it { is_expected.to_not allow_value("certainly not a valid url").for(:show_website) }
+  end
+
+  # e-commerce-yossi end
 end
