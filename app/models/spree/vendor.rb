@@ -36,6 +36,8 @@ module Spree
     validates :show_website, :allow_blank => true,
       format: { with: URL_REGEXP, message: 'URL has invalid format' }
 
+    has_secure_password
+
     # e-commerce-yossi end
 
     private
